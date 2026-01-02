@@ -1,13 +1,8 @@
-import { useState } from 'react'
 import './App.css'
+import KanbanBoard from './components/KanbanBoard/KanbanBoard'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-    </>
-  )
+  return <KanbanBoard />
 }
 
 export default App
