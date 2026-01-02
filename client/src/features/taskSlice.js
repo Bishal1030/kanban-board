@@ -5,9 +5,10 @@ import {
   updateTask,
   deleteTask,
 } from '../thunks/taskThunk';
+import { loadTasksFromStorage, saveTasksToStorage } from '../utils/localStorage';
 
 const initialState = {
-  tasks: [],
+  tasks: loadTasksFromStorage(),
   loading: false,
   error: null,
 };
@@ -25,6 +26,7 @@ const taskSlice = createSlice({
       .addCase(createTask.fulfilled, (state, action) => {
         state.loading = false;
         state.tasks.unshift(action.payload);
+        saveTasksToStorage(state.tasks);
       })
       .addCase(createTask.rejected, (state, action) => {
         state.loading = false;
@@ -37,6 +39,7 @@ const taskSlice = createSlice({
       .addCase(getTasks.fulfilled, (state, action) => {
         state.loading = false;
         state.tasks = action.payload;
+        saveTasksToStorage(state.tasks);
       })
       .addCase(getTasks.rejected, (state, action) => {
         state.loading = false;
@@ -49,6 +52,7 @@ const taskSlice = createSlice({
         );
         if (index !== -1) {
           state.tasks[index] = action.payload;
+          saveTasksToStorage(state.tasks);
         }
       })
 
@@ -56,6 +60,7 @@ const taskSlice = createSlice({
         state.tasks = state.tasks.filter(
           (task) => task.id !== action.payload
         );
+        saveTasksToStorage(state.tasks);
       });
   },
 });
