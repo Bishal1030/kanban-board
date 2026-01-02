@@ -45,7 +45,7 @@ jobs:
       - name: Start or Restart backend with PM2
         working-directory: server
         run: |
-          pm2 start index.js --name app || pm2 restart app
+          /home/ubuntu/.nvm/versions/node/v22.21.1/bin/pm2 start index.js --name app || /home/ubuntu/.nvm/versions/node/v22.21.1/bin/pm2 restart app
 
       # FRONTEND
       - name: Install frontend dependencies
