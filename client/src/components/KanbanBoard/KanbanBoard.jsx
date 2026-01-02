@@ -18,8 +18,12 @@ const KanbanBoard = () => {
   const [isUpdating, setIsUpdating] = useState(false);
 
   useEffect(() => {
-    dispatch(getTasks());
-  }, [dispatch]);
+    // Load from localStorage first (already loaded in initial state)
+    // Only fetch from API if localStorage is empty
+    if (tasks.length === 0) {
+      dispatch(getTasks());
+    }
+  }, [dispatch, tasks.length]);
 
   const handleOpenCreateModal = (status) => {
     setSelectedStatus(status);
@@ -73,7 +77,7 @@ const KanbanBoard = () => {
       if (targetTask) {
         newStatus = targetTask.status;
       } else {
-        return; // Invalid drop target
+        return;
       }
     }
 

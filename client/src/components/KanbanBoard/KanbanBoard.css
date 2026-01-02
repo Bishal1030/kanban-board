@@ -3,38 +3,64 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 /* Main Board Area */
 .board-main {
   width: 100%;
-  background-color: #ffffff;
+  background: transparent;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
 .board-header {
-  padding: 2rem;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 2.5rem 2rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .board-title {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #1f2937;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .board-columns {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.75rem;
   padding: 2rem;
   overflow-x: auto;
   flex: 1;
   justify-content: center;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 }
 
+.board-columns::-webkit-scrollbar {
+  height: 8px;
+}
+
+.board-columns::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.board-columns::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.board-columns::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
 
 .loading {
   display: flex;
@@ -43,5 +69,6 @@
   height: 100vh;
   font-size: 1.25rem;
   color: #6b7280;
+  font-weight: 500;
 }
 
