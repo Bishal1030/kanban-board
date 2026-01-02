@@ -1,7 +1,8 @@
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config();
 
 module.exports = {
   development: {
+    url: process.env.DATABASE_URL,     
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
@@ -12,19 +13,19 @@ module.exports = {
     dialectOptions: {
       ssl: false,
     },
-    logging: false,
   },
 
   test: {
+    url: process.env.DATABASE_URL,
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     dialect: 'postgres',
-    logging: false,
   },
 
   production: {
+    url: process.env.DATABASE_URL,
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
@@ -35,6 +36,5 @@ module.exports = {
       ssl: true,
       rejectUnauthorized: false,
     },
-    logging: false,
   },
 };
