@@ -2,7 +2,6 @@ require('dotenv').config({ path: '../.env' });
 
 module.exports = {
   development: {
-    url: process.env.DATABASE_URL,     
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
@@ -17,7 +16,6 @@ module.exports = {
   },
 
   test: {
-    url: process.env.DATABASE_URL,
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
@@ -27,7 +25,6 @@ module.exports = {
   },
 
   production: {
-    url: process.env.DATABASE_URL,
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
