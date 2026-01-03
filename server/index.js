@@ -4,7 +4,10 @@ const cors = require('cors');
 const { Sequelize } = require('sequelize');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PATCH', 'DELETE']
+}));
 app.use(express.json());
 
 const port = process.env.PORT || 6030;
