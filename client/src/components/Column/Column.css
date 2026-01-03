@@ -114,3 +114,62 @@
   border-radius: 12px;
 }
 
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .board-column {
+    min-width: 90%;
+    max-width: 90%;
+    border-radius: 12px;
+  }
+
+  .column-header {
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .column-title {
+    font-size: 0.8125rem;
+  }
+
+  .add-task-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1.125rem;
+  }
+
+  .column-content {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .board-column {
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .column-header {
+    padding: 0.875rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .column-title {
+    font-size: 0.75rem;
+  }
+
+  .add-task-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .column-content {
+    padding: 0.875rem;
+    gap: 0.625rem;
+    min-height: 120px;
+  }
+}
+
