@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createTask } from '../../thunks/taskThunk';
 import './CreateTaskModal.css';
@@ -12,6 +12,15 @@ const CreateTaskModal = ({ isOpen, onClose, defaultStatus = 'todo' }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setFormData((prev) => ({
+        ...prev,
+        status: defaultStatus,
+      }));
+    }
+  }, [defaultStatus, isOpen]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
