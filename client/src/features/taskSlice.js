@@ -20,16 +20,11 @@ const taskSlice = createSlice({
   extraReducers: (builder) => {
     builder
 
-      .addCase(createTask.pending, (state) => {
-        state.loading = true;
-      })
       .addCase(createTask.fulfilled, (state, action) => {
-        state.loading = false;
         state.tasks.unshift(action.payload);
         saveTasksToStorage(state.tasks);
       })
       .addCase(createTask.rejected, (state, action) => {
-        state.loading = false;
         state.error = action.payload;
       })
 
