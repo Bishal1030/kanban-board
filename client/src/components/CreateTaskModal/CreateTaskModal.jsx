@@ -70,11 +70,22 @@ const CreateTaskModal = ({ isOpen, onClose, defaultStatus = 'todo' }) => {
 
   if (!isOpen) return null;
 
+  const getStatusLabel = (status) => {
+    const statusMap = {
+      'todo': 'Todo',
+      'in-progress': 'In Progress',
+      'done': 'Done'
+    };
+    return statusMap[status] || 'New';
+  };
+
+  const modalTitle = `Create ${getStatusLabel(formData.status)} Task`;
+
   return (
     <div className="modal-overlay" onClick={handleClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h3 className="modal-title">Create New Task</h3>
+          <h3 className="modal-title">{modalTitle}</h3>
           <button className="modal-close-btn" onClick={handleClose} disabled={isSubmitting}>
             ×
           </button>

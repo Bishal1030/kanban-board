@@ -211,3 +211,134 @@
   transform: none !important;
 }
 
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .modal-content {
+    max-width: 70%;
+    border-radius: 16px;
+  }
+
+  .modal-header {
+    padding: 1.5rem 1.5rem 1.25rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-close-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.375rem;
+  }
+
+  .task-form {
+    padding: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    font-size: 0.8125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.875rem;
+    border-radius: 10px;
+  }
+
+  .form-textarea {
+    min-height: 100px;
+  }
+
+  .form-actions {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    border-radius: 16px;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .modal-header {
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-close-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.25rem;
+  }
+
+  .task-form {
+    padding: 1.25rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-label {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 10px;
+  }
+
+  .form-textarea {
+    min-height: 90px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .form-error {
+    padding: 0.875rem;
+    font-size: 0.8125rem;
+  }
+}
+
