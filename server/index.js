@@ -14,12 +14,10 @@ const port = process.env.PORT || 6030;
 
 app.use('/api', require('./routes'))
 
-// Setup Sequelize connection
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
 });
 
-// Test DB connection
 (async () => {
   try {
     await sequelize.authenticate();
@@ -31,5 +29,5 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 
 
 app.listen(port, () => {
-  console.log(`🚀 Server running on port ${port}`);
+  console.log(` Server running on port ${port}`);
 });
